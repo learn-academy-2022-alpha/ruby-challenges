@@ -14,8 +14,6 @@ p 4 % 3.0
 
 # p 0 / 0
 
-
-
 #Variables Challenges
 #Set a variable called my_favorite_number equal to your favorite number
 #Calculate your favorite number divided by 2
@@ -42,7 +40,7 @@ kobe_num1 = 8
 #Create a variable and return it in a sentence string interpolation
 #Create a variable that contains a string and test some of the Ruby string methods
 #.upcase.reverse.include?.capitalize
-#
+
 p "Kobes numbers were #{kobe_num1} and 24"
 word = "hello"
 p word.upcase
@@ -50,6 +48,13 @@ p word.reverse
 p word.include?"ll"
 p "hello".capitalize()
 
+#Create an array that contains the name of at least five TV shows
+#Find the length of the array
+#Return the first item in the array
+#Return the fourth item in the array
+#Permanently reverse the order of the array
+#Create a new empty array for your top favorite TV shows
+#From the full TV show array, add your top two favorite shows to the empty array
 
 tvshow = ["the office","friends","blacklist","hells kitchen","squid game"]
 p tvshow[0]
