@@ -18,9 +18,7 @@ p 'Player 2 choose one of the following: rock, paper, scissors'
 playertwo = gets.chomp
 
 
-if playerone != 'rock' || 'paper' || 'scissors'
-    p 'Choose rock, paper, or scissors'
-elsif playertwo != 'rock' || 'paper' || 'scissors'
+if playerone || playertwo != 'rock' || 'paper' || 'scissors'
     p 'Choose rock, paper, or scissors'
 elsif playerone == 'rock' && playertwo == 'scissors'
     p "#{userone} wins!"
