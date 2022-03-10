@@ -60,14 +60,21 @@ end
 # User ID cannot contain the following characters: !#$ or spaces
 # Password cannot be the word "password".
 
-def check_credentials(id, pass)
+def check_credentials
+
+    puts 'Enter your user id:'
+    id = gets.chomp
+
+    puts 'Enter your password'
+    pass = gets.chomp
+
     if id == pass
         puts 'User id cannot be the same as password'
     elsif id.length < 6 || pass.length < 6
         puts 'User id or password too short'
     elsif !pass.include?('!') && !pass.include?('#') && !pass.include?('$')
         puts 'Password must include one of the following: "!#$"'
-    elsif !pass.match(/\d/)
+    elsif pass.count("0-9") < 1
         puts 'Password must contain at least one number'
     elsif id.include?('!') || id.include?('#') || id.include?('$') || id.include?(' ')
         puts 'User id cannot contain spaces or of the following "!#$"'
@@ -76,13 +83,7 @@ def check_credentials(id, pass)
     end
 end
 
-puts 'Enter your user id:'
-user_id = gets.chomp
-
-puts 'Enter your password'
-user_password = gets.chomp
-
-check_credentials(user_id, user_password)
+check_credentials
 
 # User Stories: Stretch
 # As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
