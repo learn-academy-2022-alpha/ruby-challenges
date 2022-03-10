@@ -49,7 +49,6 @@ p pass_checker(user_id, password)
 
 # Password cannot be the word "password" - done
 
-
 # User Stories: Stretch
 
 # As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
