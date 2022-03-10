@@ -63,8 +63,8 @@ end
 def check_credentials(id, pass)
     if id == pass
         puts 'User id cannot be the same as password'
-    elsif id.length < 6 && pass.length < 6
-        puts 'User id and password too short'
+    elsif id.length < 6 || pass.length < 6
+        puts 'User id or password too short'
     elsif !pass.include?('!') && !pass.include?('#') && !pass.include?('$')
         puts 'Password must include one of the following: "!#$"'
     elsif !pass.match(/\d/)
