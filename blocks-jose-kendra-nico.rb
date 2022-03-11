@@ -69,52 +69,59 @@
 
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
 
-arr = [2, 7, 150, 5, 12, 69]
+arr = [2, 7, 150, 5, 12, 69, 11, 13, 27]
 
 def oddsort(ar)
-     ar.each do |i|
+    newArr = []
+    ar.each do |i|
        if i % 2 != 0
-        p i
-       end   
-       p i.sort_by{|i| i.length }
+       newArr << i
+       end
 end 
+    newArr.sort
 end
 
-p oddsort(arr)
+    p oddsort(arr)
 
 # Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercased letters should be returned lowercased and all lowercased letters should be returned uppercased.
 
+strings = ['HEY what ARE you GUYS up TO']
 
+def ayo(str)
+    str.join("").swapcase.split(" ")
+end
+
+p ayo(strings)
 
 # Create a method that takes in an array of words and returns all the words that start with a particular letter. Ex) Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
 
-# awords = ['an angry bird is eating an apple']
+awords = ['Apple', 'Avocado', 'Banana', 'Mango']
 
-# def aword(arr)
-#     arr.select do |val|
-#         val[0].includes?('a')
-#     end
-# end 
-# p aword(awords)
+def aword(arr)
+    arr.select do |val|
+        val[0].include?('A')
+    end
+end 
+p aword(awords)
 
 # FIZZBUZZ
 # Write a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
 
-# def fizzbuzz(n)
-#   (1..n).each do |i|
-#     if i % 3 == 0 && i % 5 == 0
-#       puts 'fizzbuzz'
-#     elsif i % 3 == 0
-#       puts 'fizz'
-#     elsif i % 5 == 0
-#       puts 'buzz'
-#     else
-#       puts i
-#     end
-#   end
-# end
+def fizzbuzz
+  (1..100).each do |i|
+    if i % 3 == 0 && i % 5 == 0
+      puts 'fizzbuzz'
+    elsif i % 3 == 0
+      puts 'fizz'
+    elsif i % 5 == 0
+      puts 'buzz'
+    else
+      puts i
+    end
+  end
+end
 
-# fizzbuzz(100)
+fizzbuzz
 
 
 
