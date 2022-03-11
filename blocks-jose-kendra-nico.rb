@@ -1,70 +1,70 @@
 # Challenges
 # Write a loop that prints the numbers 1 to 20.
 
-# num = 1
-# while num <= 20
-#     puts num
-#     num += 1
-# end
+num = 1
+while num <= 20
+    puts num
+    num += 1
+end
 
 # Write a loop that prints the numbers 1 to 20 using a different approach than previously used.
 
-# (1..20).each do |num|
-#     p num
-# end
+(1..20).each do |num|
+    p num
+end
     
 
 # Write a loop that prints only even numbers from 20 to 0.
 
-# num = 20 
-# while num >= 0
-#     p num
-#     num -= 2
-# end
+num = 20 
+while num >= 0
+    p num
+    num -= 2
+end
 
 # Create a method that takes in an array of numbers and returns a new array with all the numbers multiplied by 5.
 
-# nums = [1,2,3,4,5]
+nums = [1,2,3,4,5]
 
-# def mult(arr)
-#     arr.map do |v|
-#     v * 5
-#     end 
-# end
+def mult(arr)
+    arr.map do |v|
+    v * 5
+    end 
+end
 
-# p mult(nums)
+p mult(nums)
 
 # Create a method that takes in an array of lowercase words and capitalizes all of the words, permanently modifying the original array.
 
-# words = ['hello my name is jose', 'kendra is cool', 'nico is too']
+words = ['hello my name is jose', 'kendra is cool', 'nico is too']
 
-# def bigletters(arr)
-#     arr.map do |v|
-#         v.upcase 
-# end
-# end 
+def bigletters(arr)
+    arr.map do |v|
+        v.upcase 
+end
+end 
 
-# p bigletters(words)
+p bigletters(words)
 
 # Create a method that takes in an array of numbers and returns the largest number in the array.
 
-# nums = [10,5,1000000,50,100]
+nums = [10,5,1000000,50,100]
 
-# def biggest(arr)
-#     arr.max()
-# end
+def biggest(arr)
+    arr.max()
+end
 
-# p biggest(nums)
+p biggest(nums)
 
 # Create a method that takes in an array of numbers and returns the smallest number in the array.
 
-# nums = [10,5,1000000,50,100]
+nums = [10,5,1000000,50,100]
 
-# def smallest(arr)
-#     arr.min()
-# end
+def smallest(arr)
+    arr.min()
+end
 
-# p smallest(nums)
+p smallest(nums)
 
 
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
