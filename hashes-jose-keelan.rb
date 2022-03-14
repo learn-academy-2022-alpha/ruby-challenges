@@ -11,7 +11,7 @@ my_phone[:instagram] = 'so everyone can be an "influencer"'
 my_phone[:facebook] = 'stay connected with friends and families'
 my_phone[:linkedin] = 'platform to network '
 my_phone[:espn] = 'to get updates on sports scores and news'
-my_phone[:tiktok] = 'to show off skills so mommmy and daddy can be proud'
+my_phone[:tiktok] = 'to show off skills so mommmy and daddy can be proud.'
 
 # p my_phone
 
