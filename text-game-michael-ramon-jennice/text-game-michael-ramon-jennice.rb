@@ -61,7 +61,8 @@ end
 beau2
 
 def charlean1
-    puts 'Charlean jumps in: "Aloha Hola!~ Are you ready for this challenge? What does the following print: number = 3/2"'.print_fast
+
+    puts 'Charlean jumps in: "Charlean arrives in her ship: Aloha Hola!~ Are you ready for this challenge? What does the following print: number = 3/2'.print_fast
     ans3 = gets.chomp
     if ans3 == '1'|| ans3.downcase == 'one'
         puts 'You deal a blow to Charlean. "You pulled a fast one, but can you dodge this?'
@@ -156,48 +157,48 @@ end
 austin1
 
 def austin2
-    puts  'What method do you call to initiate a new hash?'
+    puts  'Austin: "What method do you call to initiate a new hash?"'
     ans8 = gets.chomp
     if ans8.downcase == '.new'
-        puts '“good job, junior dev knight!”'
+        puts 'Austin:“good job, junior dev knight!”'
     else
-        puts '"But who will fund my island?” You get hit GAME OVER!!'
+        puts 'Austin:"But who will fund my island?” You get hit GAME OVER!!'
         game_start
     end
 end
 austin2
 
 def sarah1
-    puts  '“What does MINASWAN stand for?”'
+    puts  'Sarah:“What does MINASWAN stand for?”'
     ans9 = gets.chomp
     if ans9.downcase == 'matz is nice so we are nice'
-        puts '“yes Matz is nice so we are nice, Matz has a very kind demeanor so we treat one another with dignity and respect; we are good to ourselves; and we are good to the codebase itself.“ Sarah takes some damage.'
+        puts 'Sarah:“yes Matz is nice so we are nice, Matz has a very kind demeanor so we treat one another with dignity and respect; we are good to ourselves; and we are good to the codebase itself.“ Sarah takes some damage.'
     else
-        puts '“you are not ready to be the Ruby Lord” Blasts "ruby ruby ruby!~" GAME OVER!!'
+        puts 'Sarah: “You are not ready to be the Ruby Lord” Blasts "ruby ruby ruby!~" GAME OVER!!'
         game_start
     end
 end
 sarah1
 
 def sarah2
-    puts  'What is the datatype for the “key” in a key: value pair?'
+    puts  'Sarah: What is the datatype for the “key” in a key: value pair?'
     ans10 = gets.chomp
     if ans10.downcase == 'symbol'
-        puts '“good job, junior dev knight”'
+        puts 'Sarah:“good job, junior dev knight”'
     else
-        puts '“you are not ready to be the Ruby Lord” Blasts "ruby ruby ruby!~" GAME OVER!!'
+        puts 'Sarah:“You are not ready to be the Ruby Lord” Sarah turns up the volume for "ruby ruby ruby!~" GAME OVER!!'
         game_start
     end
 end
 sarah2
 
 def sarah3
-    puts  'What year is Ruby invented?'
+    puts  'Sarah: What year is Ruby invented?'
     ans11 = gets.chomp
     if ans11 == '1995'
-        puts '“good job, junior dev knight”'
+        puts 'Sarah:“good job, junior dev knight”'
     else
-        puts '“you are not ready to be the Ruby Lord” Blasts "ruby ruby ruby!~" GAME OVER!!'
+        puts 'Sarah:“you are not ready to be the Ruby Lord” Blasts "ruby ruby ruby!~" GAME OVER!!'
         game_start
     end
 end
@@ -205,7 +206,7 @@ sarah3
 
 def game_win
     p 'Sarah passes the boombox and the Ruby crown to you.'
-    p 'You become the new Ruby Lord.'
+    p 'SaraH: "You have become the new Ruby Lord."'
     p 'You walk towards the glowing PostgreSQL tree and the boombox blares as you take your place on the Ruby throne.'
     p 'Ruby, ruby, ruby, ruby (ah-ah-ah-ah-ah-ah)'
     p 'do ya, do ya, do ya (ah-ah-ah-ah-ah-ah)'
