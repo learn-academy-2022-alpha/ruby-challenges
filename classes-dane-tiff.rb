@@ -85,6 +85,31 @@ p red.all_colors
 # Hint: Use attr_accessor as well as an initialize method.
 # As a developer, I can create a Fish that inherits from Animal.
 # As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
+
+class Animal
+    attr_accessor :alive, :age, :blood_type
+
+    def initialize(blood_type)
+        @alive = true
+        @age = 0
+        @blood_type = blood_type
+    end
+
+    def birthday
+        @age += 1
+    end
+end
+
+class Fish < Animal
+    def initialize(blood_type='cold')
+        super(blood_type)
+    end
+end
+
+my_fish = Fish.new
+
+p my_fish.blood_type
+
 # As a developer, I can create a Salmon that inherits from Fish.
 # As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
 # As a developer, I can see that my Salmon is cold-blooded.
@@ -92,6 +117,18 @@ p red.all_colors
 # As a developer, I can see a message that tells me all of my Salmon's information.
 # As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
 # Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+
+class Salmon < Fish
+    def initialize(species)
+        super
+        @species = species
+    end
+end
+
+my_salmon = Salmon.new('Atlantic')
+
+p my_salmon
+
 # As a developer, I can create a Mammal that inherits from Animal.
 # As a developer, I can initialize all of my Mammals to be warm_blooded.
 # As a developer, I can create a Bear that inherits from Mammal.
