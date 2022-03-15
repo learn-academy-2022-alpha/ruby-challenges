@@ -34,22 +34,22 @@
 # For the following ColorPalette challenge use initialize and attr_accessor methods in your class
 # As a developer, I can create a class called ColorPalette.
 
-class ColorPalette 
-    attr_accessor :color1, :color2, :color3
-
-    def initialize(color1, color2, color3)
-        @color1 = color1
-        @color2 = color2
-        @color3 = color3
-    end
-    def all_colors
-        "The three colors of this palette are #{color1}, #{color2}, and #{color3}"
-    end
-end
-
-p green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam')
-
-p green.all_colors
+# class ColorPalette
+#     attr_accessor :color1, :color2, :color3
+#
+#     def initialize(color1, color2, color3)
+#         @color1 = color1
+#         @color2 = color2
+#         @color3 = color3
+#     end
+#     def all_colors
+#         "The three colors of this palette are #{color1}, #{color2}, and #{color3}"
+#     end
+# end
+#
+# p green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam')
+#
+# p green.all_colors
 
 
 # As a developer, I can create three instances (objects) of class ColorPalette. (e.g green = ColorPalette.new)
@@ -57,14 +57,67 @@ p green.all_colors
 # As a developer, I can print the value of each individual color.
 # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
 # As a developer, I can change one or more colors of a given palette.
+
+
 # Animal Kingdom
 # As a developer, I can make an Animal (generic Animal class).
+
+class Animal
+  attr_accessor :name, :age, :alive
+
+  def initialize(name, age, alive)
+    @name = name
+    @alive = true
+    @age = age.to_i
+  end
+  def age_up
+    @age += 1
+      if @age > 4
+        @alive == false
+      else
+      end
+    end
+  def status
+    if @alive == true
+      "#{@name} is #{@age} and currently alive."
+    else
+      "#{@name} was #{@age} and is deceased."
+    end
+  end
+end
+p donkey = Animal.new("Ted", 1, "alive")
+donkey.age_up
+p donkey.status
+
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
 # As a developer, I can give my Animal an age of 0 upon creation.
 # As a developer, I can age my Animal up one year at a time.
 # As a developer, I can return my Animal's age, as well as if they're alive.
 # Hint: Use attr_accessor as well as an initialize method.
+
 # As a developer, I can create a Fish that inherits from Animal.
+
+class Fish < Animal
+  def initialize(name, age, cold_blooded, alive)
+    super(name, age, alive)
+    @cold_blooded = true
+  end
+  def cold_blooded
+    @cold_blooded
+  end
+  if @cold_blooded == true
+    "#{@name} is cold blooded."
+  else
+    "#{@name} is warm blooded"
+  end
+end
+
+p salmon = Fish.new("Salmon", "3", "cold blooded", "alive")
+# p salmon.cold_blooded
+
+p salmon.age_up
+p salmon.age_up
+p salmon.status
 # As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
 # As a developer, I can create a Salmon that inherits from Fish.
 # As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
