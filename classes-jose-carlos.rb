@@ -10,25 +10,28 @@
 class Task
     def initialize(title)
         @title = title
-        @status = 'Incomplete'
+        @status = 'incomplete'
     end
-    def new_status 
-        @status = 'Completed'
+    def complete 
+        @status = 'completed'
+    end
+    def show_info
+        "#{@title} is #{@status}"
     end
 end
 
-laundry = Task.new 'wash clothes'
-sweeping = Task.new 'sweep floor '
-dishes = Task.new 'wash dishes'
+laundry = Task.new('Washing my clothes')
+sweeping = Task.new('Sweeping the floor ')
+dishes = Task.new('Washing the dishes')
 
-# laundry.new_status
-# p laundry
+# laundry.complete
+# p laundry.show_info
 
-# sweeping.new_status
-# p sweeping
+# sweeping.complete
+# p sweeping.show_info
 
-# dishes.new_status
-# p dishes
+# dishes.complete
+# p dishes.show_info
 
 # For the following ColorPalette challenge use initialize and attr_accessor methods in your class
 # As a developer, I can create a class called ColorPalette.
@@ -45,11 +48,14 @@ class ColorPalette
         @shade2 = shade2
         @shade3 = shade3
     end
+    def all_colors
+    "The colors in your palette are: #{shade1}, #{shade2}, #{shade3}"
+    end
 end
 
 green = ColorPalette.new("Chartreuse", "Kelly", "Seafoam")
 blue = ColorPalette.new("Powder Blue", "Sky Blue", "Navy Blue")
-red = ColorPalette.new("Maroon Blood", "Blood Red", "Light Red")
+red = ColorPalette.new("Maroon", "Blood Red", "Light Red")
 
 # p green.shade1
 # p green.shade2
@@ -63,6 +69,12 @@ red = ColorPalette.new("Maroon Blood", "Blood Red", "Light Red")
 # p red.shade2
 # p red.shade3
 
+# p green.all_colors
+# p blue.all_colors
+# p red.all_colors
+
+
+
 # Animal Kingdom
 # As a developer, I can make an Animal (generic Animal class).
 # As a developer, upon initialization, I can give my Animal a status of alive, which will be set to true.
@@ -73,54 +85,37 @@ red = ColorPalette.new("Maroon Blood", "Blood Red", "Light Red")
 
 
 class Animal
-    attr_accessor :name, :alive, :age
-    def initialize(name)
-        @name = name
+    attr_accessor :alive, :age
+    def initialize
         @alive = true
         @age = 0
     end
-    def animal_status
-        if @alive == true
-        @status = "#{name} is #{age} and is alive"
-        else 
-        @status = "#{name} is #{age} and is not alive"      
-        end
-    end
+
     def birthday
         @age += 1
     end
 end
 
-# dog = Animal.new("Husky")
-# p dog.animal_status
+# dog = Animal.new
 # dog.birthday
 # p dog
 
+# As a developer, I can create a Fish that inherits from Animal.
+# As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
+
 class Fish < Animal 
-    def initialization(name, cold_blooded)
-        super(name)
-        @name = name
-        def
-        @cold_blooded = true
+    attr_accessor :blood
+    def initialize
+        super()
+        @blood = 'cold blooded'
     end
 end
 
-class Salmon < Fish
-    attr_accessor :name, :cold_blooded
-    def initialize(specie)
-        super(name)
-        @specie = specie
-    end    
-end
+# fish = Fish.new
+# p fish.blood
+# fish.birthday
+# p fish
 
-salmons = Salmon.new("Atlantic")
-salmons.birthday
-salmons.cold_blooded
-p salmons
-
-
-# As a developer, I can create a Fish that inherits from Animal.
-# As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
 # As a developer, I can create a Salmon that inherits from Fish.
 # As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
 # As a developer, I can see that my Salmon is cold-blooded.
@@ -128,12 +123,85 @@ p salmons
 # As a developer, I can see a message that tells me all of my Salmon's information.
 # As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
 # Hint: You will need a method that changes the status of alive in the initialize method of Animal.
+
+class Salmon < Fish
+    attr_accessor :species, :age
+
+    def initialize(species)
+        super()
+        @species = species
+    end    
+
+    def life
+        if @age < 4
+            @age += 1
+        else
+            @alive = false
+    end
+end
+
+    def info 
+        "The #{species} salmon is a #{blood} fish and is #{age} years old."
+    end
+
+end
+
+sockeye = Salmon.new('sockeye')
+sockeye.birthday
+sockeye.birthday
+sockeye.birthday
+sockeye.birthday
+sockeye.birthday
+# p sockeye
+# # p sockeye.blood
+# # p sockeye.info
+
+
 # As a developer, I can create a Mammal that inherits from Animal.
 # As a developer, I can initialize all of my Mammals to be warm_blooded.
+
+class Mammal < Animal
+    attr_accessor :type
+    
+    def initialize
+        super()
+        @type = 'warm blooded'
+    end
+end
+
+mammal = Mammal.new
+p mammal
+
 # As a developer, I can create a Bear that inherits from Mammal.
 # As a developer, I can age my Bear up.
 # As a developer, I can see a message that tells me all of my Bear's information.
 # As a developer, if my Bear turns 20 years old, I can make it die peacefully after a full and happy life.
+
+class Bear < Mammal
+    attr_accessor :birthday
+
+    def info 
+        "The bear is #{type} and is #{age} years old"
+    end
+
+    def age_up
+        if @age < 20
+            @age += 1
+        else
+        @alive = false
+        end
+    end
+
+end
+
+bear = Bear.new 
+bear.age_up
+bear.age_up
+bear.age_up
+bear.age_up
+bear.age_up
+# p bear.info
+
 # Hint: You will need a method that changes the status of alive in the initialize method of Animal.
 # As a developer, I can create a Mammal of my choice.
 # As a developer, I can interact with the new Mammal via various methods.
