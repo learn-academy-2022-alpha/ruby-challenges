@@ -24,7 +24,7 @@ describe 'Task' do
         expect{ Task.new }.to_not raise_error
     end
     it 'has a title' do
-        laundry = Task.new
+        laundry = rTask.new
         laundry.title = 'laundry'
         expect(laundry.title).to eq 'laundry'
     end

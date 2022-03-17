@@ -1,6 +1,6 @@
 class Task
-    attr_accessor :title, :description, :status
-    def initialize(title, description)
+    attr_accessor :title, :description
+    def initialize(title, description, status)
         @title = title
         @description = description
         @status = "in progress"
@@ -10,24 +10,34 @@ class Task
     end
 end
 
-class Tasklist < Task
-    attr_accessor :title, :description, :status
-    def initialize(title, description, status)
-        super(title, description, status)
+class Tasklist
+    attr_accessor :task1, :task2, :task3
+    def initialize (task1, task2, task3 )
+        @task1 = task1
+        @task2 = task2
+        @task3 = task3
+    end
+    def current_tasks
+        p "Your Current Tasks are #{@task1.title}, #{@task2.title}, and #{@task3.title} ."
     end
     def completed_tasks
         if @status == "done"
             p "#{@title} is/are #{@status}."
-        end
-    end
-    def incomplete_tasks
-        if @status == "in progress"
+        elsif @status == "in progress"
             p "#{@title} is are #{@status}."
+        else
+            p "Somthing is wrong with the status"
         end
     end
 end
 
 
-dishes = Task.new('dishes', 'do dishes')
-laundry = Task.new('laundry', 'abcdefg')
-laundry.set_status
+p dishes = Task.new('dishes', 'do dishes', 'done')
+laundry = Task.new('laundry', 'abcdefg', 'in progress')
+clean = Task.new('clean', 'do cleaning', 'in progress')
+#dishes.set_status
+#p dishes
+
+p tasklist1 = Tasklist.new(dishes, laundry, clean)
+tasklist1.current_tasks
+tasklist1.completed_tasks
