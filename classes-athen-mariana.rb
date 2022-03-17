@@ -132,3 +132,108 @@ p red.change_color3
 # Hint: Find out how the spaceship operator can help you with an array.
 # SUPER STRETCH: As a developer, I can utilize a Ruby module to help DRY up my code. I can create a swim method inside of my module that will apply to Animals who can swim. This method should return "I can swim!"
 # Hint: Look into module mix ins. Since not all animals can swim, only certain Animals will have access to this module.
+
+class Animal
+  attr_accessor :isAlive, :age
+  def initialize(isAlive, age)
+    @isAlive = true
+    @age = 0
+  end
+  def birthday
+    @age += 20
+  end
+  def animal_info
+    if @isAlive
+      "Animal is alive and #{@age} years old."
+    else
+      "Animal is not alive."
+    end
+  end
+  def is_fish_alive
+    if @age >= 4
+      @isAlive = false
+    else
+      @isAlive = true
+    end
+  end
+  def is_bear_alive
+    if @age >= 20
+      @isAlive = false
+    else
+      @isAlive = true
+    end
+  end
+  def is_lion_alive
+    if @age >= 20
+      @isAlive = false
+    else
+      @isAlive = true
+    end
+  end
+end
+
+class Fish < Animal
+  def initialize(isAlive, age, cold_blooded)
+    super(isAlive, age)
+    @cold_blooded = true
+  end
+end
+
+class Salmon < Fish
+  def initialize(isAlive, age, cold_blooded, species)
+    super(isAlive, age, cold_blooded)
+    @species = species
+  end
+  def salmon_info
+    animal_info + " This salmon is also cold-blooded and belongs to the #{@species} species."
+  end
+end
+
+my_salmon = Salmon.new(true, 0, true, 'Atlantic')
+p my_salmon
+my_salmon.birthday
+my_salmon.birthday
+my_salmon.birthday
+my_salmon.birthday
+p my_salmon.age
+p my_salmon.salmon_info
+p my_salmon.is_fish_alive
+
+class Mammal < Animal
+  def initialize(isAlive, age, warm_blooded)
+    super(isAlive, age)
+    @warm_blooded = true
+  end
+end
+
+class Bear < Mammal
+  def initialize(isAlive, age, warm_blooded)
+    super(isAlive, age, warm_blooded)
+  end
+  def bear_info
+    animal_info + " This bear is also warm-blooded."
+  end
+end
+
+my_bear = Bear.new(true, 0, true)
+p my_bear
+my_bear.birthday
+p my_bear.age
+p my_bear.bear_info
+p my_bear.is_bear_alive
+
+class Lion < Mammal
+  def initialize(isAlive, age, warm_blooded)
+    super(isAlive, age, warm_blooded)
+  end
+  def lion_info
+    animal_info + " This lion is also warm_blooded."
+  end
+end
+
+my_lion = Lion.new(true, 0, true)
+p my_lion
+my_lion.birthday
+p my_lion.age
+p my_lion.lion_info
+p my_lion.is_lion_alive
